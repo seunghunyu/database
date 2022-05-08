@@ -30,6 +30,9 @@ public class MemberRepositoryV0 {
             close(con,pstmt,null);
         }
     }
+    public Member findById(String memberId) throws SQLException{
+
+    }
 
     private void close(Connection con, Statement stmt, ResultSet rs){
         if(stmt != null){

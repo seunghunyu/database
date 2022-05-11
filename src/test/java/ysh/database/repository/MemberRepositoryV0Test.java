@@ -25,6 +25,10 @@ class MemberRepositoryV0Test {
         log.info("member equals findMember {}",memberV0.equals(findMember));
         assertThat(findMember).isEqualTo(memberV0);
 
+        //update: money 10000 -> 20000
+        repository.update(memberV0.getMemberId(),20000);
+        Member updatedMember = repository.findById(memberV0.getMemberId());
+        assertThat(updatedMember.getMoney()).isEqualTo(20000);
     }
 
 }

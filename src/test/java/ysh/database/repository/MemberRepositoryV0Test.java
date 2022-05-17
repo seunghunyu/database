@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import ysh.database.domain.Member;
 
 import java.sql.SQLException;
+import java.util.NoSuchElementException;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -29,6 +30,10 @@ class MemberRepositoryV0Test {
         repository.update(memberV0.getMemberId(),20000);
         Member updatedMember = repository.findById(memberV0.getMemberId());
         assertThat(updatedMember.getMoney()).isEqualTo(20000);
+
+        //delete
+        repository.delete(memberV0.getMemberId());
+        assertThatThrownBy(()-> repository.findById(memberV0.getMemberId())).isInstanceOf(NoSuchElementException.class);
     }
 
 }

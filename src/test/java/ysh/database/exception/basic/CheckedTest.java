@@ -1,4 +1,4 @@
-package ysh.database.exception;
+package ysh.database.exception.basic;
 
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;

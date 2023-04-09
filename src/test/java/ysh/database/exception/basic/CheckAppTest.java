@@ -1,4 +1,4 @@
-package ysh.database.exception;
+package ysh.database.exception.basic;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

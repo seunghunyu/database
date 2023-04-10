@@ -14,6 +14,7 @@ import ysh.database.domain.Member;
 import ysh.database.repository.MemberRepository;
 import ysh.database.repository.MemberRepositoryV3;
 import ysh.database.repository.MemberRepositoryV4_1;
+import ysh.database.repository.MemberRepositoryV4_2;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -49,7 +50,8 @@ class MemberServiceV4Test {
 
         @Bean
         MemberRepository memberRepository() {
-            return new MemberRepositoryV4_1(dataSource);
+//            return new MemberRepositoryV4_1(dataSource);
+            return new MemberRepositoryV4_2(dataSource);
         }
         @Bean
         MemberServiceV4 memberServiceV4(){
